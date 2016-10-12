@@ -24,15 +24,28 @@ var Button = function (_React$Component) {
 	function Button(props) {
 		_classCallCheck(this, Button);
 
-		return _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).call(this, props));
+		var _this = _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).call(this, props));
+
+		_this.state = {
+			style: {
+				color: '#333',
+				backgroundColor: 'transparent',
+				borderColor: '#333'
+			}
+		};
+		return _this;
 	}
+
+	// componentWillReceiveProps(nextProps) {
+	// 	console.log(nextProps);     
+	// }
 
 	_createClass(Button, [{
 		key: 'render',
 		value: function render() {
 			return _react2.default.createElement(
 				'button',
-				{ style: Object.assign(styles.normal, styles.padded) },
+				{ style: Object.assign(styles.normal, styles.padded, this.state.style) },
 				'Button'
 			);
 		}
@@ -44,8 +57,7 @@ var Button = function (_React$Component) {
 var styles = {
 	normal: {
 		backgroundColor: 'transparent',
-		color: '#333',
-		border: '2px solid #333',
+		border: '2px solid',
 		cursor: 'pointer'
 	},
 	padded: {
