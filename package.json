@@ -1,0 +1,33 @@
+{
+  "name": "simple-react-button",
+  "version": "0.0.1",
+  "description": "A beautiful and simple button component",
+  "main": "index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/babel src/index.jsx -o index.js",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/manojsinghnegiwd/simple-react-button"
+  },
+  "bugs": {
+    "url": "https://github.com/manojsinghnegiwd/simple-react-button/issues"
+  },
+  "keywords": [
+    "simple-react-button",
+    "button",
+    "react-component"
+  ],
+  "author": "Manoj Singh Negi",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0"
+  }
+}
