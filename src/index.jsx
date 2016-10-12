@@ -6,10 +6,18 @@ class Button extends React.Component {
 	}
 	render() {
 		return(
-			<button>
-				this is a button
+			<button style={styles.normal}>
+				Button
 			</button>
 		);
+	}
+}
+
+var styles = {
+	normal: {
+		backgroundColor: 'transparent',
+		color: '#333',
+		border: '2px solid #333'
 	}
 }
 

@@ -32,13 +32,21 @@ var Button = function (_React$Component) {
 		value: function render() {
 			return _react2.default.createElement(
 				'button',
-				null,
-				'this is a button'
+				{ style: styles.normal },
+				'Button'
 			);
 		}
 	}]);
 
 	return Button;
 }(_react2.default.Component);
+
+var styles = {
+	normal: {
+		backgroundColor: 'transparent',
+		color: '#333',
+		border: '2px solid #333'
+	}
+};
 
 exports.default = Button;
