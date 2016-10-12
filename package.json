@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "./node_modules/.bin/babel src/index.jsx -o index.js",
-    "dev": "./node_modules/.bin/babel src/index.jsx -0 example/simple-react-button.js",
+    "dev": "./node_modules/.bin/babel src/index.jsx -o example/simple-react-button.js",
     "prepublish": "npm run build"
   },
   "repository": {
