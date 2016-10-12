@@ -58,7 +58,7 @@ var Button = function (_React$Component) {
 		value: function render() {
 			return _react2.default.createElement(
 				'button',
-				{ style: Object.assign(styles.normal, styles.padded, this.state.style) },
+				{ style: Object.assign(styles.normal, styles.padded, this.state.style, this.props.style) },
 				'Button'
 			);
 		}
@@ -71,11 +71,14 @@ var styles = {
 	normal: {
 		backgroundColor: 'transparent',
 		border: '2px solid',
-		cursor: 'pointer'
+		cursor: 'pointer',
+		fontSize: '20px'
 	},
 	padded: {
-		paddingLeft: '15px',
-		paddingRight: '15px'
+		paddingLeft: '25px',
+		paddingRight: '25px',
+		paddingTop: '5px',
+		paddingBottom: '5px'
 	}
 };
 

@@ -7,7 +7,10 @@ class App extends React.Component {
 
 		const props = {
 			color: '#9b59b6',
-			full: 'true'
+			full: 'true',
+			style: {
+				fontSize: '30px'
+			}
 		}
 
 		return (
