@@ -3,18 +3,31 @@ import React from 'react';
 class Button extends React.Component {
 	constructor(props) {
 		super(props);
+
+		let color, backgroundColor, borderColor = '';
+
+		if(!this.props.full) {
+			color = this.props.color ? this.props.color : '#333'
+			backgroundColor = 'transparent';
+			borderColor = color;
+		} else {
+			color = '#fff'
+			backgroundColor = this.props.color ? this.props.color : '#333';
+			borderColor = color;
+		}
+
 		this.state = {
 			style: {
-				color:'#333',
-				backgroundColor: 'transparent',
-				borderColor: '#333'
+				color: color,
+				backgroundColor: backgroundColor,
+				borderColor: borderColor
 			}
 		}
 	}
 
-	// componentWillReceiveProps(nextProps) {
-	// 	console.log(nextProps);     
-	// }
+	componentDidMount() {
+
+	}
 
 	render() {
 		return(

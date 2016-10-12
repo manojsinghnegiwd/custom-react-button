@@ -4,8 +4,14 @@ import Button from './simple-react-button';
 
 class App extends React.Component {
 	render() {
+
+		const props = {
+			color: '#9b59b6',
+			full: 'true'
+		}
+
 		return (
-			<Button />
+			<Button {...props} />
 		)
 	}
 }

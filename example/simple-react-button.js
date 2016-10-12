@@ -26,21 +26,34 @@ var Button = function (_React$Component) {
 
 		var _this = _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).call(this, props));
 
+		var color = void 0,
+		    backgroundColor = void 0,
+		    borderColor = '';
+
+		if (!_this.props.full) {
+			color = _this.props.color ? _this.props.color : '#333';
+			backgroundColor = 'transparent';
+			borderColor = color;
+		} else {
+			color = '#fff';
+			backgroundColor = _this.props.color ? _this.props.color : '#333';
+			borderColor = color;
+		}
+
 		_this.state = {
 			style: {
-				color: '#333',
-				backgroundColor: 'transparent',
-				borderColor: '#333'
+				color: color,
+				backgroundColor: backgroundColor,
+				borderColor: borderColor
 			}
 		};
 		return _this;
 	}
 
-	// componentWillReceiveProps(nextProps) {
-	// 	console.log(nextProps);     
-	// }
-
 	_createClass(Button, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {}
+	}, {
 		key: 'render',
 		value: function render() {
 			return _react2.default.createElement(
