@@ -32,7 +32,7 @@ var Button = function (_React$Component) {
 		value: function render() {
 			return _react2.default.createElement(
 				'button',
-				{ style: styles.normal },
+				{ style: Object.assign(styles.normal, styles.padded) },
 				'Button'
 			);
 		}
@@ -45,7 +45,12 @@ var styles = {
 	normal: {
 		backgroundColor: 'transparent',
 		color: '#333',
-		border: '2px solid #333'
+		border: '2px solid #333',
+		cursor: 'pointer'
+	},
+	padded: {
+		paddingLeft: '15px',
+		paddingRight: '15px'
 	}
 };
 

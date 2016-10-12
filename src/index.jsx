@@ -6,7 +6,7 @@ class Button extends React.Component {
 	}
 	render() {
 		return(
-			<button style={styles.normal}>
+			<button style={Object.assign(styles.normal, styles.padded)}>
 				Button
 			</button>
 		);
@@ -18,6 +18,11 @@ var styles = {
 		backgroundColor: 'transparent',
 		color: '#333',
 		border: '2px solid #333',
+		cursor: 'pointer'
+	},
+	padded: {
+		paddingLeft: '15px',
+		paddingRight: '15px'
 	}
 }
 
