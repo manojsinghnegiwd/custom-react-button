@@ -17,7 +17,7 @@ var styles = {
 	normal: {
 		backgroundColor: 'transparent',
 		color: '#333',
-		border: '2px solid #333'
+		border: '2px solid #333',
 	}
 }
 
