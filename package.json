@@ -23,7 +23,7 @@
   "author": "Manoj Singh Negi",
   "license": "MIT",
   "dependencies": {
-    "react": "^15.3.2",
+    "react": "^15.3.2"
   },
   "devDependencies": {
     "babel-cli": "^6.16.0",
