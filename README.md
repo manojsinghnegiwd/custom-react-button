@@ -1,13 +1,13 @@
-# simple-react-button
+# custom-react-button
 A beautiful and simple button component
 
 ### Installation
 ```sh
-npm install --save simple-react-button
+npm install --save custom-react-button
 ```
 ### Usage
 ```javascript
-import Button from 'simple-react-button';
+import Button from 'custom-react-button';
 // then in your render function
 render() {
     return(

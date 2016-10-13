@@ -1,6 +1,6 @@
 import React from 'react';
 import ReacDOM from 'react-dom';
-import Button from './simple-react-button';
+import Button from './custom-react-button';
 
 class App extends React.Component {
 	render() {

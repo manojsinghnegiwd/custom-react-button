@@ -1,22 +1,22 @@
 {
-  "name": "simple-react-button",
+  "name": "custom-react-button",
   "version": "0.0.1",
   "description": "A beautiful and simple button component",
   "main": "index.js",
   "scripts": {
     "build": "./node_modules/.bin/babel src/index.jsx -o index.js",
-    "dev": "./node_modules/.bin/babel src/index.jsx -o example/simple-react-button.js",
+    "dev": "./node_modules/.bin/babel src/index.jsx -o example/custom-react-button.js",
     "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/manojsinghnegiwd/simple-react-button"
+    "url": "https://github.com/manojsinghnegiwd/custom-react-button"
   },
   "bugs": {
-    "url": "https://github.com/manojsinghnegiwd/simple-react-button/issues"
+    "url": "https://github.com/manojsinghnegiwd/custom-react-button/issues"
   },
   "keywords": [
-    "simple-react-button",
+    "custom-react-button",
     "button",
     "react-component"
   ],
