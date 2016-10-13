@@ -12,7 +12,7 @@ import Button from 'simple-react-button';
 render() {
     return(
         <div>
-            <Button color="#9b59b6" full style={{fontSize: 13px}}>
+            <Button color="#9b59b6" full style={{fontSize: "13px"}}>
                 Click Me
             </Button>
         </div>
@@ -25,7 +25,7 @@ render() {
 #### `style`
 You can provide your own inline custom style to Button.
 ```javascript
-<Button style={{fontSize: 13px}}>
+<Button style={{fontSize: "13px"}}>
     Click Me
 </Button>
 ```
