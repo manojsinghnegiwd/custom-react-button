@@ -4,7 +4,7 @@
   "description": "A beautiful and simple button component",
   "main": "index.js",
   "scripts": {
-    "build": "./node_modules/.bin/babel src/index.jsx -o index.js && npm run dev",
+    "build": "./node_modules/.bin/babel src/index.jsx -o index.js",
     "dev": "./node_modules/.bin/babel src/index.jsx -o example/simple-react-button.js",
     "prepublish": "npm run build"
   },
