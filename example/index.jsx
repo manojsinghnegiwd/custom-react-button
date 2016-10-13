@@ -14,7 +14,9 @@ class App extends React.Component {
 		}
 
 		return (
-			<Button {...props} />
+			<Button {...props}>
+				Button
+			</Button>
 		)
 	}
 }

@@ -51,15 +51,12 @@ var Button = function (_React$Component) {
 	}
 
 	_createClass(Button, [{
-		key: 'componentDidMount',
-		value: function componentDidMount() {}
-	}, {
 		key: 'render',
 		value: function render() {
 			return _react2.default.createElement(
 				'button',
-				{ style: Object.assign(styles.normal, styles.padded, this.state.style, this.props.style) },
-				'Button'
+				{ style: Object.assign({}, styles.normal, styles.padded, this.state.style, this.props.style) },
+				this.props.children
 			);
 		}
 	}]);

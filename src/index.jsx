@@ -25,14 +25,10 @@ class Button extends React.Component {
 		}
 	}
 
-	componentDidMount() {
-
-	}
-
 	render() {
 		return(
-			<button style={Object.assign(styles.normal, styles.padded, this.state.style, this.props.style)}>
-				Button
+			<button style={Object.assign({}, styles.normal, styles.padded, this.state.style, this.props.style)}>
+				{this.props.children}
 			</button>
 		);
 	}
