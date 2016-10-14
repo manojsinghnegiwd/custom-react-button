@@ -4,17 +4,22 @@ class Button extends React.Component {
 	constructor(props) {
 		super(props);
 
-		let color, backgroundColor, borderColor = '';
+		let color, backgroundColor, borderColor = ''; // initialize variables
+
+		// if full button
 
 		if(!this.props.full) {
 			color = this.props.color ? this.props.color : '#333'
 			backgroundColor = 'transparent';
 			borderColor = color;
 		} else {
+			// if not full button
 			color = '#fff'
 			backgroundColor = this.props.color ? this.props.color : '#333';
 			borderColor = color;
 		}
+
+		// initilize state
 
 		this.state = {
 			style: {
@@ -26,8 +31,9 @@ class Button extends React.Component {
 	}
 
 	componentDidMount() {
+		// if button is round
 		if(this.props.round) {
-			let style = Object.assign({}, this.state.style, styles.round);
+			let style = Object.assign({}, this.state.style, styles.round); // inject round style
 			this.setState({
 				style
 			});

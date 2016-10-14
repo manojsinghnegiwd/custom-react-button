@@ -28,17 +28,22 @@ var Button = function (_React$Component) {
 
 		var color = void 0,
 		    backgroundColor = void 0,
-		    borderColor = '';
+		    borderColor = ''; // initialize variables
+
+		// if full button
 
 		if (!_this.props.full) {
 			color = _this.props.color ? _this.props.color : '#333';
 			backgroundColor = 'transparent';
 			borderColor = color;
 		} else {
+			// if not full button
 			color = '#fff';
 			backgroundColor = _this.props.color ? _this.props.color : '#333';
 			borderColor = color;
 		}
+
+		// initilize state
 
 		_this.state = {
 			style: {
@@ -53,8 +58,9 @@ var Button = function (_React$Component) {
 	_createClass(Button, [{
 		key: 'componentDidMount',
 		value: function componentDidMount() {
+			// if button is round
 			if (this.props.round) {
-				var style = Object.assign({}, this.state.style, styles.round);
+				var style = Object.assign({}, this.state.style, styles.round); // inject round style
 				this.setState({
 					style: style
 				});
