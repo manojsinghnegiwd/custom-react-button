@@ -28,19 +28,22 @@ var Button = function (_React$Component) {
 
 		var color = void 0,
 		    backgroundColor = void 0,
-		    borderColor = ''; // initialize variables
+		    borderColor = void 0,
+		    type = ''; // initialize variables
 
 		// if full button
 
 		if (!_this.props.full) {
 			color = _this.props.color ? _this.props.color : '#333';
-			backgroundColor = 'transparent';
+			backgroundColor = '#fff';
 			borderColor = color;
+			type = 'hollow';
 		} else {
 			// if not full button
 			color = '#fff';
 			backgroundColor = _this.props.color ? _this.props.color : '#333';
 			borderColor = color;
+			type = 'full';
 		}
 
 		// initilize state
@@ -50,24 +53,37 @@ var Button = function (_React$Component) {
 				color: color,
 				backgroundColor: backgroundColor,
 				borderColor: borderColor
-			}
+			},
+			normalStyle: {},
+			onHoverdStyle: {},
+			type: type,
+			hovered: false
 		};
 
 		// bind functions
 		_this._onClick = _this._onClick.bind(_this);
+		_this._toggleHover = _this._toggleHover.bind(_this);
 		return _this;
 	}
 
 	_createClass(Button, [{
 		key: 'componentDidMount',
 		value: function componentDidMount() {
-			// if button is round
-			if (this.props.round) {
-				var style = Object.assign({}, this.state.style, styles.round); // inject round style
-				this.setState({
-					style: style
-				});
-			}
+			// update onHoverdStyle
+
+			var onHoverdStyle = this._invertColors(this.state.type, this.state.style);
+
+			this.setState({
+				onHoverdStyle: onHoverdStyle
+			});
+
+			// preserve normal style
+
+			var normalStyle = this.state.style;
+
+			this.setState({
+				normalStyle: normalStyle
+			});
 		}
 
 		// onclick function
@@ -82,12 +98,64 @@ var Button = function (_React$Component) {
 			}
 		}
 	}, {
+		key: '_toggleHover',
+		value: function _toggleHover() {
+
+			var hovered = this.state.hovered;
+			var style = {};
+
+			if (hovered) {
+				style = this.state.normalStyle;
+			} else {
+				style = this.state.onHoverdStyle;
+			}
+
+			// toggle hovered state
+			hovered = !hovered;
+			this.setState({
+				hovered: hovered,
+				style: style
+			});
+		}
+	}, {
+		key: '_invertColors',
+		value: function _invertColors(type, style) {
+			var newStyle = {};
+			switch (type) {
+				case 'full':
+					newStyle.color = style.backgroundColor;
+					newStyle.borderColor = style.backgroundColor;
+					newStyle.backgroundColor = style.color;
+					break;
+				case 'hollow':
+					newStyle.color = style.backgroundColor;
+					newStyle.borderColor = style.backgroundColor;
+					newStyle.backgroundColor = style.color;
+					break;
+				default:
+					newStyle = style;
+					break;
+			}
+			return newStyle;
+		}
+	}, {
 		key: 'render',
 		value: function render() {
 
+			var style = {};
+
+			// if button is round
+			if (this.props.round) {
+				style = Object.assign({}, this.state.style, styles.round); // inject round style
+			}
+
 			return _react2.default.createElement(
 				'button',
-				{ style: Object.assign({}, styles.normal, styles.padded, this.state.style, this.props.style), onClick: this._onClick },
+				{
+					style: Object.assign({}, styles.normal, styles.padded, style, this.props.style),
+					onClick: this._onClick,
+					onMouseOver: this._toggleHover,
+					onMouseOut: this._toggleHover },
 				this.props.children
 			);
 		}
