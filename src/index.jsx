@@ -25,7 +25,17 @@ class Button extends React.Component {
 		}
 	}
 
+	componentDidMount() {
+		if(this.props.round) {
+			let style = Object.assign({}, this.state.style, styles.round);
+			this.setState({
+				style
+			});
+		}
+	}
+
 	render() {
+
 		return(
 			<button style={Object.assign({}, styles.normal, styles.padded, this.state.style, this.props.style)}>
 				{this.props.children}
@@ -34,7 +44,7 @@ class Button extends React.Component {
 	}
 }
 
-var styles = {
+let styles = {
 	normal: {
 		backgroundColor: 'transparent',
 		border: '2px solid',
@@ -46,6 +56,9 @@ var styles = {
 		paddingRight: '25px',
 		paddingTop: '5px',
 		paddingBottom: '5px'
+	},
+	round: {
+		borderRadius: '30px'
 	}
 }
 
