@@ -28,6 +28,9 @@ class Button extends React.Component {
 				borderColor: borderColor
 			}
 		}
+
+		// bind functions
+		this._onClick = this._onClick.bind(this);
 	}
 
 	componentDidMount() {
@@ -40,10 +43,20 @@ class Button extends React.Component {
 		}
 	}
 
+	// onclick function
+
+	_onClick () {
+
+		// if parent onClick function exist
+		if(this.props.onClick) {
+			this.props.onClick(); // call parent onclick function
+		}
+	}
+
 	render() {
 
 		return(
-			<button style={Object.assign({}, styles.normal, styles.padded, this.state.style, this.props.style)}>
+			<button style={Object.assign({}, styles.normal, styles.padded, this.state.style, this.props.style)} onClick={this._onClick}>
 				{this.props.children}
 			</button>
 		);

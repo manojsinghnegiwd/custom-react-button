@@ -52,6 +52,9 @@ var Button = function (_React$Component) {
 				borderColor: borderColor
 			}
 		};
+
+		// bind functions
+		_this._onClick = _this._onClick.bind(_this);
 		return _this;
 	}
 
@@ -66,13 +69,25 @@ var Button = function (_React$Component) {
 				});
 			}
 		}
+
+		// onclick function
+
+	}, {
+		key: '_onClick',
+		value: function _onClick() {
+
+			// if parent onClick function exist
+			if (this.props.onClick) {
+				this.props.onClick(); // call parent onclick function
+			}
+		}
 	}, {
 		key: 'render',
 		value: function render() {
 
 			return _react2.default.createElement(
 				'button',
-				{ style: Object.assign({}, styles.normal, styles.padded, this.state.style, this.props.style) },
+				{ style: Object.assign({}, styles.normal, styles.padded, this.state.style, this.props.style), onClick: this._onClick },
 				this.props.children
 			);
 		}
